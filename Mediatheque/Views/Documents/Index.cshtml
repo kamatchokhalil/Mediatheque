@@ -21,6 +21,17 @@
             <th>
                 @Html.DisplayNameFor(model => model.Annee)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NbEmprunts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Empruntable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Emprunte)
+            </th>
+
+
             <th></th>
         </tr>
     </thead>
@@ -37,9 +48,21 @@
                 @Html.DisplayFor(modelItem => item.Annee)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.NbEmprunts)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Empruntable)*@
+                @Html.CheckBoxFor(modelItem => item.Empruntable, new { @disabled = "disabled" })
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Empruntable)*@
+                @Html.CheckBoxFor(modelItem => item.Emprunte, new { @disabled = "disabled" })
+            </td>
+            <td>
                 <a asp-action="Edit" asp-route-id="@item.Key">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Key">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Key">Delete</a>
+                @*<a asp-action="Emprunter" asp-route-id="@item.Key">Delete</a>*@
             </td>
         </tr>
 }
